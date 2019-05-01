@@ -5,6 +5,9 @@
 
     <data>
         <variable name="viewModel" type="gabriellee.project.mvvmdaggerprep.ui.post.PostListViewModel"/>
+        <variable
+                name="dividerItemDecoration"
+                type="android.support.v7.widget.DividerItemDecoration" />
     </data>
     <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -23,6 +26,7 @@
                 android:id="@+id/post_list"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:dividerItemDecoration="@{dividerItemDecoration}"
                 app:adapter="@{viewModel.getPostListAdapter()}"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"

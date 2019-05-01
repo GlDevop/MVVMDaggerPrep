@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.annotation.StringRes
 import android.support.design.widget.Snackbar
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import gabriellee.project.mvvmdaggerprep.injection.ViewModelFactory
 import gabriellee.project.mvvmdaggerprep.ui.post.PostListViewModel
@@ -20,6 +21,7 @@ class PostListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_post_list)
         binding.postList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        binding.dividerItemDecoration = DividerItemDecoration(this, LinearLayoutManager.VERTICAL)
         viewModel = ViewModelProviders.of(this, ViewModelFactory(this)).get(PostListViewModel::class.java)
         binding.viewModel = viewModel
     }
